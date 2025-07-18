@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercy - گولڈ سگنل ویب</title>
+  <style>
+    body {
+      font-family: 'Noto Nastaliq Urdu', serif;
+      background: #f9f9f9;
+      text-align: right;
+      padding: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .signal-box {
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #fff;
+    }
+    .signal {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .buy { color: green; }
+    .sell { color: red; }
+    .wait { color: orange; }
+    .chart-placeholder {
+      height: 300px;
+      border: 2px dashed #aaa;
+      text-align: center;
+      line-height: 300px;
+      color: #888;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mercy ویب ایپ</h1>
+  <p>یہ ایپ آپ کو گولڈ مارکیٹ میں فوری سگنل دیتی ہے: Buy، Sell یا Wait۔</p>
+
+  <div class="signal-box">
+    <div class="signal buy">📈 Buy کا سگنل</div>
+    <audio id="buySound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <button onclick="playSound('buy')">🔊 Buy آواز چلائیں</button>
+  </div>
+
+  <div class="chart-placeholder">
+    چارٹ یہاں ظاہر ہو گا (مثلاً TradingView Embed)
+  </div>
+
+  <script>
+    function playSound(type) {
+      let audio;
+      if (type === 'buy') audio = document.getElementById('buySound');
+      if (audio) audio.play();
+    }
+  </script>
+
+</body>
+</html>
